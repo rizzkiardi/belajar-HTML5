@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML 5 - Picture</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.125em;
+        line-height: 1.6;
+        color: #666;
+        padding: 2em;
+      }
+
+      .hero {
+        display: grid;
+        grid-gap: 2em;
+        align-items: center;
+      }
+
+      .hero-text p {
+        text-align: justify;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @media (min-width: 960px) {
+        .hero {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Tag Picture</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis in
+          at mollitia, soluta vel dolorum rerum ullam hic perspiciatis rem.
+          Deleniti fugit, ea hic veritatis nostrum quaerat cumque eveniet at
+          quia, fuga eos ducimus facere assumenda harum iure accusantium amet
+          expedita. Asperiores quos veritatis deserunt labore. Rem quis iusto
+          at.
+        </p>
+      </div>
+
+      <picture>
+        <source
+          media="(min-width:960px)"
+          srcset="picture-large.jpg"
+          sizes="50vw"
+        />
+        <img src="picture-small.jpg" alt="Gambar Burung" />
+      </picture>
+    </div>
+  </body>
+</html>

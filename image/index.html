@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 - Image</title>
+    <style>
+      h1 {
+        margin-bottom: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Element</h1>
+    <!-- img attribute
+     - src
+     - alt
+     - width
+     - height
+     - title
+     - srcset
+     - sizes
+     - loading
+      -->
+
+    <!-- src (source)
+     - attribute wajib, 
+     - lokasi tempat menyimpan gambar 
+     - tipe gambar yang biasa dipakai => png, jpg, jpeg, gif, svg, webp, avif
+     - perhatikan copyright
+     - jangan lakukan hotlinking-->
+
+    <!-- alt (alternative text) 
+     - digunakan ketika gambar tidak bisa ditampilkan
+     - agar dibaca oleh screen reader dan digunakan oleh SEO
+      -->
+
+    <!-- width & height
+     - menentukan ukuran gambar
+     - gunakan salah satu untuk mempertahankan aspect ratio-->
+
+    <!-- title 
+      digunakan untuk menuliskan informasi tambahan mengenai gambar,
+      menambahkan tooltip saat mouse hover
+      gunakan sebagai tambahan dari alt -->
+
+    <!-- srcset
+        digunakan untuk membuat halaman web responsive
+        bisa berdasarkan lebar layar atau kerapatan pixel-->
+
+    <!-- loading
+     menentukan gambar di load oleh browser
+     secara default bernilai eager
+     dapat diisi 'eager' atau 'lazy' -->
+
+    <img
+      src="img-small.jpg"
+      alt="Kitchen set"
+      title="Kitchen set"
+      srcset="img-small.jpg 500w, img-medium.jpg 750w, img-large.jpg 1000w"
+      loading="lazy"
+    />
+
+    <!-- CATATAN -->
+    <!-- loading="lazy" artinya gambar akan di load ketika dibutuhkan -->
+    <!-- jika gambar awalnya tidak tampil, lebih baik gunakan loading="lazy" -->
+
+    <!-- figure
+    merepresentasikan konten yang berdiri sendiri tanpa memnpengaruhi flow halaman 
+ bisa gambar, ilustrasi, diagram, code snippet
+ terdapat <figcaption></figcaption>
+ dapat menambahkan keterangan, seperti copyright
+ -->
+    <figure>
+      <img src="figure.jpg" alt="" width="500" />
+      <figcaption>Anak kecil sedang bermain</figcaption>
+    </figure>
+
+    <!-- picture
+     bertujuan untuk optimasi halaman agar menghemat bandwidth dan mempercepat load time
+     bisa juga digunakan sebagai art direction, untuk menampilkan gambar yang berbeda pada display/device yang berbeda. hampir sama seperti srcset dan sizes -->
+    <picture>
+      <source media="(min-width:960px)" srcset="img-large.jpg" sizes="50vw" />
+      <source media="(min-width:600px)" srcset="img-medium.jpg" />
+      <img src="picture.jpg" alt="Gambar Burung" />
+    </picture>
+  </body>
+</html>

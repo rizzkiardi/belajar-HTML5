@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 - Audio</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      figcaption {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Audio 
+     digunakan untuk menjalankan file audio
+     mendukung file .mp3, .wav, .ogg
+     bisa menggunakan tag source untuk memilih audio
+
+     attribute audio
+     - src source atribut wajib
+     - controls 
+     - preload membuat file audio di load sebelum dijalankan
+     - autoplay menjalankan audio secara otomatis
+     - loop
+     - muted
+      -->
+
+    <!-- <audio src="one-step-closer-207958.mp3" controls=""></audio> -->
+    <figure>
+      <figcaption>Play - "One Stop Closer"</figcaption>
+      <audio controls autoplay loop>
+        <source src="one-step-closer-207958.mp3" type="audio/mp3" />
+      </audio>
+    </figure>
+  </body>
+</html>

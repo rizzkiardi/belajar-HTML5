@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 - Track</title>
+  </head>
+  <body>
+    <!-- Attribute track
+     src 
+     kind jenis track (subtitle, caption, chapter, description)
+     title
+     srclang-->
+
+    <video controls width="500">
+      <source src="283533_medium.mp4" type="video/mp4" />
+      <track
+        src="captions/caption.vtt"
+        kind="captions"
+        title="Bahasa Indonesia"
+        srclang="id"
+      />
+    </video>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/SQMruNuafHk?si=_Dp8PIXk4DFwvAA-"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 - Video</title>
+    <style>
+      /* body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      } */
+
+      body,
+      h1 {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* background-color: rgba(0, 0, 0, 0.3); */
+        /* background-image: linear-gradient(to right); */
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 3em;
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden; /* menghilangkan scroll */
+      }
+
+      .video-bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        min-height: 100%;
+        min-width: 100%;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video
+     Elemen yang digunakan untuk menampilkan video, film atau audio 
+     
+     mendukung file .mp4, .webm-->
+
+    <!-- attribute video
+      - src attribute wajib
+      controls
+      poster menampilkan sebuah gambar ketika video tidak bisa di play
+      preload
+      autoplay
+      loop
+      muted
+      width
+      height
+      
+      -->
+    <!-- <video src="" controls width="500"></video> -->
+
+    <!-- <figure>
+      <figcaption>Ocean Waves</figcaption>
+      <video controls width="500" poster="" loop autoplay muted>
+        <source src="283533_medium.mp4" type="video/mp4" />
+        Browser tidak mendukung tag <code>video</code>
+      </video>
+    </figure> -->
+
+    <div class="hero">
+      <h1>Hello world!</h1>
+      <video
+        class="video-bg"
+        src="283533_medium.mp4"
+        autoplay
+        loop
+        muted
+      ></video>
+    </div>
+  </body>
+</html>
