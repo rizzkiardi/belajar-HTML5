@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 - Accessibility</title>
+  </head>
+  <body>
+    <!-- Accessibility
+     "Sebuah cara untuk membuat website kita bisa digunakan oleh sebanyak mungkin user" 
+    
+     Web accessibility
+     - buat struktur DOM yang 'masuk akal'
+     - gunakan semantic element
+     - interactive control 
+     - beri label pada semua kontrol dan gambar
+     - terapkan manajemen fokus yang intuitif
+     - website dapat diakses penuh menggunakan keyboard
+     - tambahkan ARIA (Accessibility Rich Internet Applications)jika dibutuhkan
+     
+     -->
+    <h1 style="color: #fff">Hello, Rizki Ardi</h1>
+
+    <!-- <label
+      >Nama Lengkap :
+      <input type="text" name="nama" />
+    </label> -->
+    <label for="nama">Nama Lengkap</label>
+    <input type="text" name="nama" id="nama" />
+
+    <label for="jurusan"
+      >Jurusan :
+      <select name="jurusan" id="jurusan">
+        <option value="ti">Teknik Informatika</option>
+        <option value="ts">Teknik Sipil</option>
+      </select>
+    </label>
+
+    <button>Kirim!</button>
+    <hr />
+
+    <!-- contoh Semantic HTML -->
+    <!-- <header></header>
+     <main>
+        <section>
+            <article>
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+            </article>
+        </section>
+     </main>
+     <footer></footer> -->
+
+    <!-- Accessibility Testing 
+    menggunakan Chrome Lighthouse
+    WCAG  https://www.w3.org/WAI/standards-guidelines/wcag/
+    -->
+  </body>
+</html>

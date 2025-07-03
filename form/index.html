@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 - Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form {
+        width: 400px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 5px 10px #ddd;
+        border-radius: 10px;
+      }
+
+      form div {
+        margin: 10px;
+      }
+
+      label {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 7px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        width: 300px;
+      }
+
+      input:focus {
+        outline: 1px solid #ddd;
+      }
+
+      button {
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        background-color: rgb(55, 158, 255);
+        color: #fff;
+        border: none;
+        outline: none;
+      }
+
+      button:hover {
+        background-color: rgb(29, 141, 245);
+      }
+
+      /* ketika input invalid */
+      input:invalid,
+      input:required:invalid {
+        border: none;
+        outline: 2px solid red;
+      }
+
+      input:valid {
+        border: 1px solid #ddd;
+        outline: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 5 input type
+     number
+     email
+     tel
+     url
+     range
+     datetime picker
+     color picker
+     -->
+
+    <form action="" method="POST" autocomplete="off">
+      <div>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          autocomplete="off"
+          autofocus
+          required
+          minlength="1"
+          maxlength="60"
+          oninvalid="this.setCustomValidity('Harus di isi')"
+          oninput="this.setCustomValidity('')"
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div>
+        <label for="handphone">Handphone </label>
+        <input
+          type="tel"
+          name="handphone"
+          id="handphone"
+          pattern="(\+62|62|0)9[1-9][0-9]{6,9}$"
+        />
+      </div>
+      <div>
+        <label for="website">URL Website </label>
+        <input type="url" name="website" id="website" />
+      </div>
+      <div>
+        <label for="number">Number </label>
+        <input
+          type="number"
+          name="number"
+          id="number"
+          min="1"
+          max="10"
+          step="2"
+        />
+      </div>
+      <div>
+        <label for="slider">Number </label>
+        <span class="start"></span>
+        <input type="range" name="number" id="slider" min="1" max="100" />
+        <span class="end"></span>
+      </div>
+      <div>
+        <label for="date">Date </label>
+        <input type="date" name="date" id="date" />
+        <!-- <input type="week" name="date" id="date" />
+        <input type="month" name="date" id="date" /> -->
+      </div>
+      <div>
+        <label for="time">Time </label>
+        <input type="time" name="time" id="time" />
+      </div>
+      <div>
+        <label for="color">Color </label>
+        <input type="color" name="color" id="color" />
+        <span class="hexa"></span>
+      </div>
+      <div>
+        <label for="kode">Kode pos </label>
+        <input type="text" name="kode" id="kode" pattern="^([1-9])[0-9]{4}$" />
+      </div>
+
+      <div>
+        <button type="submit">Send</button>
+      </div>
+    </form>
+
+    <!-- HTML 5 Input Attribute
+     autocomplete
+     autofocus (hanya boleh 1 di dalam form)
+     required (inputan harus di isi)
+     minlength & maxlength
+     min & max (biasa dipakai untuk angka)
+     step (digunakan pada number untuk kelipatan)
+     pattern -->
+
+    <!-- CATATAN -->
+    <!-- no validate =>  untuk menghilangkan validasi, di letakkan di dalam form -->
+
+    <!-- membuat keterangan harus di isi -->
+    <!-- oninvalid="this.setCustomValidity('Harus di isi')"
+          oninput="this.setCustomValidity('')" -->
+
+    <script>
+      // INPUT range
+      const slider = document.querySelector("#slider");
+      const start = document.querySelector(".start");
+      const end = document.querySelector(".end");
+
+      start.innerHTML = slider.min;
+      end.innerHTML = slider.min;
+      slider.addEventListener("input", function () {
+        end.innerHTML = slider.value;
+      });
+
+      //   COLOR
+      const color = document.querySelector("#color");
+      const hexa = document.querySelector(".hexa");
+
+      hexa.innerHTML = color.value;
+      color.addEventListener("input", function () {
+        hexa.innerHTML = color.value;
+        hexa.style.color = color.value;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 - Web Storage</title>
+  </head>
+  <body>
+    <!-- Web API yang menyediakan mekanisme untuk menyimpan nilai (key/value pair) yang lebih intuitif daripada cookie -->
+
+    <!-- ada 2 type
+     local storage & session storage -->
+
+    <!-- web storage digunakan untuk 
+      preferensi user, contoh dark mode/light mode
+      setting & configuration
+      score & leaderboards pada game
+      posisi video / audio terakhir
+       -->
+
+    <!-- web storage JANGAN digunakan untuk
+        data sensitif
+        otentikasi -->
+
+    <!-- local storage dan session storage properties
+         setItem(key, value ) => untuk menyimpan pasangan key/value
+         getItem(key) => mengambil value berdasarkan key
+         removeItem(key) => menghapus nilai pasangan key/value
+         clear() =>menghapus semua isi storage
+         key(index) =>mengambil nilai key berdasarkan index
+         length => mengetahui jumlah nilai di dalam storage-->
+
+    <!-- contoh -->
+    <!-- localStorage.setItem("name", "Rizki ardi");                    l   
+         localStorage.getItem("name") -->
+
+    <h1>Hello Rizki ardi!</h1>
+
+    <script>
+      const judul = document.querySelector("h1");
+      let nama = localStorage.getItem("nama");
+      if (!nama) {
+        let nama = prompt("Masukkan nama anda:");
+        localStorage.setItem("nama", nama);
+      }
+
+      judul.innerHTML = `Hello, ${nama}!`;
+    </script>
+  </body>
+</html>
